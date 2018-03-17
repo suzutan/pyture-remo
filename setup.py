@@ -19,7 +19,7 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Intended Audience :: Developers',
     ],
-    project_urls={  # Optional
+    project_urls={
         'Bug Reports': 'https://github.com/suzutan/pyture-remo/issues',
         'Source': 'https://github.com/suzutan/pyture-remo/',
     },
