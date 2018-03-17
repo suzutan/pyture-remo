@@ -2,16 +2,10 @@ from .device import Device
 from .api import Api
 from typing import List
 from .appliance import Appliance
+from .base import Base
 
 
-class Remo:
-
-    def __str__(self) -> str:
-        return "\n".join([
-            f"{x.ljust(20)}= {getattr(self, x)}" for x in [
-                y for y in dir(self) if not y.startswith("__") and not y.endswith("__")
-            ]
-        ])
+class Remo(Base):
 
     def __init__(self, token: str):
         self.devices: List[Device] = None
@@ -33,8 +27,6 @@ class Remo:
         result: dict = self.api.get(path="/devices")
 
         self.devices = [Device(device_data=device) for device in result]
-
-        [print(device) for device in self.devices]
 
     def fetch_appliances(self) -> None:
         result: List[dict] = self.api.get(path="/appliances")

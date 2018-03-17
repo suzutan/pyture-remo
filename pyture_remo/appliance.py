@@ -1,11 +1,7 @@
-class Appliance:
+from .base import Base
 
-    def __str__(self) -> str:
-        return "\n".join([
-            f"{x.ljust(20)}= {getattr(self, x)}" for x in [
-                y for y in dir(self) if not y.startswith("__") and not y.endswith("__")
-            ]
-        ])
+
+class Appliance(Base):
 
     def __init__(self, appliance_data: dict):
         self.id = appliance_data["id"]

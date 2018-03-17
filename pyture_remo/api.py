@@ -1,7 +1,8 @@
 import requests
+from .base import Base
 
 
-class Api:
+class Api(Base):
 
     def __init__(self, token: str):
         self.session: requests.Session = requests.session()
