@@ -1,4 +1,6 @@
 from .base import Base
+from .signal import Signal
+from typing import List
 
 
 class Appliance(Base):
@@ -11,4 +13,4 @@ class Appliance(Base):
         self.type = appliance_data["type"]
         self.settings = appliance_data["settings"]
         self.aircon = appliance_data["aircon"]
-        self.signals = appliance_data["signals"]
+        self.signals: List = [Signal(**signal) for signal in appliance_data["signals"]]
