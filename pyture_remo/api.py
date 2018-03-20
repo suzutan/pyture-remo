@@ -5,7 +5,7 @@ from typing import List
 class Api:
     _instance = None
     token: str = None
-    api_endpoint: str = "https://api.nature.global/1"
+    api_endpoint: str = "https://api.nature.global"
     session: requests.Session = None
 
     @staticmethod
