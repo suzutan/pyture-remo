@@ -30,7 +30,7 @@ class Api:
         result.raise_for_status()
         return result.json()
 
-    def post(self, path: str, data: dict=None) -> dict:
+    def post(self, path: str, data: dict = None) -> dict:
         result = self.session.post(f"{self.api_endpoint}{path}", data=data)
 
         result.raise_for_status()

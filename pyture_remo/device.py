@@ -1,7 +1,10 @@
-from .base import Base
+# -*- coding: utf-8 -*-
 
 
-class Device(Base):
+class Device:
+
+    def __str__(self):
+        return f"{self.__class__.__name__}: {self.name}"
 
     def __init__(self, data: dict):
         self.name: str = data["name"]

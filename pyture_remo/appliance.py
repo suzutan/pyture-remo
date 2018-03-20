@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from .signal import Signal
 from typing import List
 
@@ -5,8 +7,7 @@ from typing import List
 class Appliance:
 
     def __str__(self):
-
-        return self.nickname
+        return f"{self.__class__.__name__}: {self.nickname}"
 
     def __init__(self, data: dict):
         self.id = data["id"]

@@ -1,11 +1,12 @@
+# -*- coding: utf-8 -*-
+
 from .api import Api
-from .base import Base
 
 
-class Signal(Base):
+class Signal:
 
     def __str__(self):
-        return self.name
+        return f"{self.__class__.__name__}: {self.name}"
 
     def __init__(self, id: str, name: str = None, image: str = None):
         self.id: str = id

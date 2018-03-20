@@ -1,11 +1,12 @@
+# -*- coding: utf-8 -*-
+
 from .device import Device
 from .api import Api
 from typing import List
 from .appliance import Appliance
-from .base import Base
 
 
-class Remo(Base):
+class Remo:
 
     def __init__(self, token: str):
         self.devices: List[Device] = None
