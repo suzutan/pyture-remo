@@ -15,20 +15,18 @@ class Remo(Base):
         self.api: Api = Api()
         self.api.init(token=token)
 
-        self.fetch_user()
-        self.fetch_devices()
-        self.fetch_appliances()
+    def find_device(self, name: str) -> Device:
+        result = list(filter(lambda x: name == x["name"], self.api.get(path="/1/devices")))
 
-    def fetch_user(self) -> None:
-        result: dict = self.api.get(path="/users/me")
-        self.id = result["id"]
-        self.nickname = result["nickname"]
+        if not len(result):
+            raise ValueError(name)
 
-    def fetch_devices(self) -> None:
-        result: dict = self.api.get(path="/devices")
+        return Device(data=result[0])
 
-        self.devices = [Device(device_data=device) for device in result]
+    def find_appliance(self, name: str) -> Appliance:
+        result = list(filter(lambda x: name == x["name"], self.api.get(path="/1/appliances")))
 
-    def fetch_appliances(self) -> None:
-        result: List[dict] = self.api.get(path="/appliances")
-        self.appliances = [Appliance(appliance_data=appliance) for appliance in result]
+        if not len(result):
+            raise ValueError(name)
+
+        return Appliance(data=result[0])
