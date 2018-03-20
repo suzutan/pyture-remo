@@ -17,3 +17,14 @@ class Appliance:
         self.settings = data["settings"]
         self.aircon = data["aircon"]
         self.signals: List = [Signal(**signal) for signal in data["signals"]]
+
+    def find_signal(self, name: str) -> Signal:
+        result = list(filter(lambda x: name == x.name, self.signals))
+
+        if not len(result):
+            raise ValueError(name)
+
+        return result[0]
+
+    def find_signals(self) -> List[Signal]:
+        return self.signals
