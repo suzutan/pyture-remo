@@ -12,7 +12,8 @@ class Remo(Base):
         self.appliances: List[Appliance] = None
         self.id: str = None
         self.nickname: str = None
-        self.api: Api = Api(token=token)
+        self.api: Api = Api()
+        self.api.init(token=token)
 
         self.fetch_user()
         self.fetch_devices()
