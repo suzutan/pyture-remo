@@ -21,3 +21,9 @@ class Device(Base):
             "value": data["newest_events"]["te"]["val"],
             "created_at": data["newest_events"]["te"]["created_at"],
         }
+
+    def get_temperature(self) -> float:
+        return self.temperature["value"]
+
+    def get_humidity(self) -> float:
+        return self.humidity["value"]
