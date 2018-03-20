@@ -30,7 +30,7 @@ class Remo(Base):
         return [Appliance(data=appliance) for appliance in self.api.get(path="/1/appliances")]
 
     def find_appliance(self, name: str) -> Appliance:
-        result = list(filter(lambda x: name == x["name"], self.api.get(path="/1/appliances")))
+        result = list(filter(lambda x: name == x["nickname"], self.api.get(path="/1/appliances")))
 
         if not len(result):
             raise ValueError(name)
