@@ -5,12 +5,12 @@ from typing import List
 
 class Appliance(Base):
 
-    def __init__(self, appliance_data: dict):
-        self.id = appliance_data["id"]
-        self.model = appliance_data["model"]
-        self.nickname = appliance_data["nickname"]
-        self.image = appliance_data["image"]
-        self.type = appliance_data["type"]
-        self.settings = appliance_data["settings"]
-        self.aircon = appliance_data["aircon"]
-        self.signals: List = [Signal(**signal) for signal in appliance_data["signals"]]
+    def __init__(self, data: dict):
+        self.id = data["id"]
+        self.model = data["model"]
+        self.nickname = data["nickname"]
+        self.image = data["image"]
+        self.type = data["type"]
+        self.settings = data["settings"]
+        self.aircon = data["aircon"]
+        self.signals: List = [Signal(**signal) for signal in data["signals"]]
