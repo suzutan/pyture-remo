@@ -9,8 +9,6 @@ from .appliance import Appliance
 class Remo:
 
     def __init__(self, token: str):
-        self.devices: List[Device] = None
-        self.appliances: List[Appliance] = None
         self.id: str = None
         self.nickname: str = None
         self.api: Api = Api()
