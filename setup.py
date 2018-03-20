@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='pyture-remo',
-    version='0.2',
+    version='0.2.1',
     description='nature-remo library for python',
     url='https://github.com/suzutan/pyture-remo',
     author='Suzuka Asagiri',
@@ -14,7 +14,7 @@ setup(
         "requests>=2.18.4"
     ],
     classifiers=[
-        'Development Status :: 1 - Planning',
+        'Development Status :: 2 - Pre-Alpha',
         'Programming Language :: Python :: 3.6',
         'License :: OSI Approved :: MIT License',
         'Intended Audience :: Developers',
