@@ -1,9 +1,12 @@
-from .base import Base
 from .signal import Signal
 from typing import List
 
 
-class Appliance(Base):
+class Appliance:
+
+    def __str__(self):
+
+        return self.nickname
 
     def __init__(self, data: dict):
         self.id = data["id"]
