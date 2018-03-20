@@ -1,9 +1,8 @@
 import requests
-from .base import Base
 from typing import List
 
 
-class Api(Base):
+class Api:
     _instance = None
     token: str = None
     api_endpoint: str = "https://api.nature.global/1"
@@ -31,7 +30,7 @@ class Api(Base):
         result.raise_for_status()
         return result.json()
 
-    def post(self, path: str, data: dict) -> dict:
+    def post(self, path: str, data: dict=None) -> dict:
         result = self.session.post(f"{self.api_endpoint}{path}", data=data)
 
         result.raise_for_status()
