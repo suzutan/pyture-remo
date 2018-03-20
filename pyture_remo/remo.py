@@ -15,6 +15,9 @@ class Remo(Base):
         self.api: Api = Api()
         self.api.init(token=token)
 
+    def find_devices(self) -> List[Device]:
+        return [Device(data=device) for device in self.api.get(path="/1/devices")]
+
     def find_device(self, name: str) -> Device:
         result = list(filter(lambda x: name == x["name"], self.api.get(path="/1/devices")))
 
@@ -22,6 +25,9 @@ class Remo(Base):
             raise ValueError(name)
 
         return Device(data=result[0])
+
+    def find_appliances(self) -> List[Appliance]:
+        return [Appliance(data=appliance) for appliance in self.api.get(path="/1/appliances")]
 
     def find_appliance(self, name: str) -> Appliance:
         result = list(filter(lambda x: name == x["name"], self.api.get(path="/1/appliances")))
