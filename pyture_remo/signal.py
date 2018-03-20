@@ -15,4 +15,4 @@ class Signal:
         self.api: Api = Api.instance()
 
     def send(self) -> dict:
-        return self.api.post(path=f"/signals/{self.id}/send")
+        return self.api.post(path=f"/1/signals/{self.id}/send")
