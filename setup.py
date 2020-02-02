@@ -2,16 +2,16 @@ from setuptools import setup, find_packages
 
 setup(
     name='pyture-remo',
-    version='0.2.1',
-    description='nature-remo library for python',
+    version='0.2.2',
+    description='nature-remo library for Python',
     url='https://github.com/suzutan/pyture-remo',
     author='Suzuka Asagiri',
-    author_email='suzutan0s2@suzutan.jp',
+    author_email='admin@suzutan.jp',
     license='MIT',
     keywords='nature-remo',
     packages=find_packages(),
     install_requires=[
-        "requests>=2.18.4"
+        "requests>=2.22.0"
     ],
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
