@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from .signal import Signal
-from typing import List
+from typing import List, NoReturn
 
 
 class Appliance:
@@ -9,14 +9,15 @@ class Appliance:
     def __str__(self):
         return f"{self.__class__.__name__}: {self.nickname}"
 
-    def __init__(self, data: dict):
-        self.id = data["id"]
-        self.model = data["model"]
-        self.nickname = data["nickname"]
-        self.image = data["image"]
-        self.type = data["type"]
-        self.settings = data["settings"]
-        self.aircon = data["aircon"]
+    def __init__(self, data: dict) -> NoReturn:
+        self.id: str = data["id"]
+        self.model: str = data["model"]
+        self.nickname: str = data["nickname"]
+        self.name: str = data["nickname"]  # alias for nickname
+        self.image: str = data["image"]
+        self.type: str = data["type"]
+        self.settings: str = data["settings"]
+        self.aircon: str = data["aircon"]
         self.signals: List = [Signal(**signal) for signal in data["signals"]]
 
     def signal(self, name: str) -> Signal:
@@ -26,6 +27,3 @@ class Appliance:
             raise ValueError(name)
 
         return result[0]
-
-    def signals(self) -> List[Signal]:
-        return self.signals
