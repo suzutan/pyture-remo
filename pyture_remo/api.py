@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import requests
-from typing import List
+from typing import List, NoReturn
 
 
 class Api:
@@ -22,13 +22,18 @@ class Api:
             cls._instance: Api = object.__new__(cls)
         return cls._instance
 
-    def init(self, token: str) -> None:
-        self.session: requests.Session = requests.session()
+    def init(self, token: str = ""):
+
+        # sessionがtest内で初期化済の場合は新しく生成しない
+        if self.session is None:
+            self.session: requests.Session = requests.session()
         self.session.headers["Authorization"] = f"Bearer {token}"
 
-    def get(self, path: str) -> dict:
-        result = self.session.get(f"{self.api_endpoint}{path}")
+        return self
 
+    def get(self, path: str) -> dict:
+        print(self.session.adapters)
+        result = self.session.get(f"{self.api_endpoint}{path}")
         result.raise_for_status()
         return result.json()
 

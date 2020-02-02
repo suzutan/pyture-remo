@@ -1,0 +1,273 @@
+[
+  {
+    "id": "31e845ce-ef54-4331-a180-fdd09531b867",
+    "device": {
+      "name": "test_device",
+      "id": "585b5f2c-4972-4acf-af48-57bdf2ac7fb2",
+      "created_at": "2019-07-13T10:31:43Z",
+      "updated_at": "2020-02-02T07:23:44Z",
+      "mac_address": "11:11:11:22:22:22",
+      "serial_number": "1W000000000000",
+      "firmware_version": "Remo/1.0.00-aaaabbbb",
+      "temperature_offset": 0,
+      "humidity_offset": 0
+    },
+    "model": {
+      "id": "9b987f4b-4276-4473-a0f4-7249888656bc",
+      "manufacturer": "panesonic",
+      "remote_name": "hk9492-ch1",
+      "name": "Panesonic LIGHT 009",
+      "image": "ico_light"
+    },
+    "type": "LIGHT",
+    "nickname": "light",
+    "image": "ico_light",
+    "settings": null,
+    "aircon": null,
+    "signals": [
+      {
+        "id": "ef0debba-49f1-4b0d-a4b2-0d8ab8dfc4f7",
+        "name": "全灯",
+        "image": "ico_io"
+      },
+      {
+        "id": "cc8bc07d-e702-4934-95e9-d8bf912b1d56",
+        "name": "白い色",
+        "image": "ico_io"
+      },
+      {
+        "id": "31e845ce-ef54-4331-a180-fdd09531b867",
+        "name": "暖かい色",
+        "image": "ico_io"
+      }
+    ],
+    "light": {
+      "buttons": [
+        {
+          "name": "on",
+          "image": "ico_on",
+          "label": "Light_on"
+        },
+        {
+          "name": "off",
+          "image": "ico_off",
+          "label": "Light_off"
+        },
+        {
+          "name": "night",
+          "image": "ico_light_night",
+          "label": "Light_night"
+        },
+        {
+          "name": "bright-up",
+          "image": "ico_arrow_top",
+          "label": "Light_bright"
+        },
+        {
+          "name": "bright-down",
+          "image": "ico_arrow_bottom",
+          "label": "Light_dark"
+        },
+        {
+          "name": "colortemp-down",
+          "image": "ico_arrow_right",
+          "label": "Light_warm"
+        },
+        {
+          "name": "colortemp-up",
+          "image": "ico_arrow_left",
+          "label": "Light_cold"
+        }
+      ],
+      "state": {
+        "brightness": "100",
+        "power": "on",
+        "last_button": "on"
+      }
+    }
+  },
+  {
+    "id": "88360778-ba3d-45f2-988f-a68535e8b36a",
+    "device": {
+      "name": "test_device",
+      "id": "585b5f2c-4972-4acf-af48-57bdf2ac7fb2",
+      "created_at": "2019-07-13T10:31:43Z",
+      "updated_at": "2020-02-02T07:23:44Z",
+      "mac_address": "11:11:11:22:22:22",
+      "serial_number": "1W000000000000",
+      "firmware_version": "Remo/1.0.00-aaaabbbb",
+      "temperature_offset": 0,
+      "humidity_offset": 0
+    },
+    "model": {
+      "id": "9DEB743A-62AA-4618-AB42-2C8BD7FB3758",
+      "manufacturer": "daikin",
+      "remote_name": "arc478a3",
+      "series": "Daikin AC",
+      "name": "Daikin AC 007",
+      "image": "ico_ac_1"
+    },
+    "type": "AC",
+    "nickname": "DAIKIN S25RTES-W",
+    "image": "ico_ac_1",
+    "settings": {
+      "temp": "23",
+      "mode": "warm",
+      "vol": "auto",
+      "dir": "1",
+      "button": "",
+      "updated_at": "2020-02-02T00:00:32Z"
+    },
+    "aircon": {
+      "range": {
+        "modes": {
+          "auto": {
+            "temp": [
+              "-2",
+              "-1",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "dir": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "auto"
+            ],
+            "vol": [
+              "1",
+              "auto"
+            ]
+          },
+          "blow": {
+            "temp": [
+              ""
+            ],
+            "dir": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "auto"
+            ],
+            "vol": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "auto"
+            ]
+          },
+          "cool": {
+            "temp": [
+              "18",
+              "19",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "25",
+              "26",
+              "27",
+              "28",
+              "29",
+              "30",
+              "31",
+              "32"
+            ],
+            "dir": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "auto"
+            ],
+            "vol": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "auto"
+            ]
+          },
+          "dry": {
+            "temp": [
+              "-2",
+              "-1",
+              "0",
+              "1",
+              "2"
+            ],
+            "dir": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "auto"
+            ],
+            "vol": [
+              ""
+            ]
+          },
+          "warm": {
+            "temp": [
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "25",
+              "26",
+              "27",
+              "28",
+              "29",
+              "30"
+            ],
+            "dir": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "auto"
+            ],
+            "vol": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "auto"
+            ]
+          }
+        },
+        "fixedButtons": [
+          "power-off"
+        ]
+      },
+      "tempUnit": "c"
+    },
+    "signals": []
+  }
+]
