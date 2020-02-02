@@ -13,7 +13,7 @@ class Remo:
         self.nickname: str = None
         self.devices:  List[Device] = []
         self.appliances:  List[Appliance] = []
-        self.api: Api = Api()
+        self.api: Api = Api().instance()
         self.api.init(token=token)
         self.sync()
 
