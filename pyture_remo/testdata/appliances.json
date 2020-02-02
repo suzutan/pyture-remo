@@ -1,6 +1,6 @@
 [
   {
-    "id": "585b5f2c-4972-4acf-af48-57bdf2ac7fb2",
+    "id": "31e845ce-ef54-4331-a180-fdd09531b867",
     "device": {
       "name": "test_device",
       "id": "585b5f2c-4972-4acf-af48-57bdf2ac7fb2",
@@ -20,7 +20,7 @@
       "image": "ico_light"
     },
     "type": "LIGHT",
-    "nickname": "照明",
+    "nickname": "light",
     "image": "ico_light",
     "settings": null,
     "aircon": null,
