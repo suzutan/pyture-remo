@@ -16,17 +16,12 @@ class Device:
         self.humidity_offset: str = data["humidity_offset"]
         self.firmware_version: str = data["firmware_version"]
         self.firmware_version: str = data["firmware_version"]
-        self.humidity: dict = {
-            "value": data["newest_events"]["hu"]["val"],
-            "created_at": data["newest_events"]["hu"]["created_at"],
-        }
-        self.temperature: dict = {
-            "value": data["newest_events"]["te"]["val"],
-            "created_at": data["newest_events"]["te"]["created_at"],
-        }
+        self.newest_events: dict = data["newest_events"]
+        self.humidity: float = data["newest_events"]["hu"]["val"]
+        self.temperature: float = data["newest_events"]["te"]["val"]
 
     def get_temperature(self) -> float:
-        return self.temperature["value"]
+        return self.temperature
 
     def get_humidity(self) -> float:
-        return self.humidity["value"]
+        return self.humidity
