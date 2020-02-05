@@ -19,9 +19,3 @@ class Device:
         self.newest_events: dict = data["newest_events"]
         self.humidity: float = data["newest_events"]["hu"]["val"]
         self.temperature: float = data["newest_events"]["te"]["val"]
-
-    def get_temperature(self) -> float:
-        return self.temperature
-
-    def get_humidity(self) -> float:
-        return self.humidity
