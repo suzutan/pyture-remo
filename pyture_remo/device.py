@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from typing import NoReturn
 
 
 class Device:
@@ -7,6 +8,12 @@ class Device:
         return f"{self.__class__.__name__}: {self.name}"
 
     def __init__(self, data: dict):
+        self._set_member(data)
+
+    def update(self, data: dict) -> NoReturn:
+        self._set_member(data)
+
+    def _set_member(self, data: dict) -> NoReturn:
         self.name: str = data["name"]
         self.id: str = data["id"]
         self.created_at: str = data["created_at"]
@@ -16,17 +23,6 @@ class Device:
         self.humidity_offset: str = data["humidity_offset"]
         self.firmware_version: str = data["firmware_version"]
         self.firmware_version: str = data["firmware_version"]
-        self.humidity: dict = {
-            "value": data["newest_events"]["hu"]["val"],
-            "created_at": data["newest_events"]["hu"]["created_at"],
-        }
-        self.temperature: dict = {
-            "value": data["newest_events"]["te"]["val"],
-            "created_at": data["newest_events"]["te"]["created_at"],
-        }
-
-    def get_temperature(self) -> float:
-        return self.temperature["value"]
-
-    def get_humidity(self) -> float:
-        return self.humidity["value"]
+        self.newest_events: dict = data["newest_events"]
+        self.humidity: float = data["newest_events"]["hu"]["val"]
+        self.temperature: float = data["newest_events"]["te"]["val"]
