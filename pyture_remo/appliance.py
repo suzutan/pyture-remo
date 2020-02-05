@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
+from typing import List, NoReturn, Optional
+
 from .signal import Signal
-from typing import List, NoReturn
 
 
 class Appliance:
@@ -26,10 +27,7 @@ class Appliance:
         self.aircon: str = data["aircon"]
         self.signals: List = [Signal(**signal) for signal in data["signals"]]
 
-    def signal(self, name: str) -> Signal:
-        result = list(filter(lambda x: name == x.name, self.signals))
+    def signal(self, name: str) -> (Optional[Signal], bool):
+        result: Optional[Signal] = next(filter(lambda x: name == x.name, self.signals), None)
 
-        if not len(result):
-            raise ValueError(name)
-
-        return result[0]
+        return result, (result is not None)
