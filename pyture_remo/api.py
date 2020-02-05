@@ -32,7 +32,6 @@ class Api:
         return self
 
     def get(self, path: str) -> dict:
-        print(self.session.adapters)
         result = self.session.get(f"{self.api_endpoint}{path}")
         result.raise_for_status()
         return result.json()
