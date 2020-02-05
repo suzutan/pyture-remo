@@ -10,6 +10,12 @@ class Appliance:
         return f"{self.__class__.__name__}: {self.nickname}"
 
     def __init__(self, data: dict) -> NoReturn:
+        self._set_member(data)
+
+    def update(self, data: dict) -> NoReturn:
+        self._set_member(data)
+
+    def _set_member(self, data: dict) -> NoReturn:
         self.id: str = data["id"]
         self.model: str = data["model"]
         self.nickname: str = data["nickname"]

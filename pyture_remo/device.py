@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from typing import NoReturn
 
 
 class Device:
@@ -7,6 +8,12 @@ class Device:
         return f"{self.__class__.__name__}: {self.name}"
 
     def __init__(self, data: dict):
+        self._set_member(data)
+
+    def update(self, data: dict) -> NoReturn:
+        self._set_member(data)
+
+    def _set_member(self, data: dict) -> NoReturn:
         self.name: str = data["name"]
         self.id: str = data["id"]
         self.created_at: str = data["created_at"]
