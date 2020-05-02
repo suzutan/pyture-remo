@@ -7,18 +7,6 @@ services:
     volumes:
       - ..:/workspace:cached
       - ~/dotfiles:/root/dotfiles
-      - ~/.gnupg/crls.d:/root/.gnupg/crls.d:ro
-      - ~/.gnupg/dirmngr.conf:/root/.gnupg/dirmngr.conf:ro
-      - ~/.gnupg/gpg.conf:/root/.gnupg/gpg.conf:ro
-      - ~/.gnupg/openpgp-revocs.d:/root/.gnupg/openpgp-revocs.d:ro
-      - ~/.gnupg/private-keys-v1.d:/root/.gnupg/private-keys-v1.d:ro
-      - ~/.gnupg/pubring.kbx:/root/.gnupg/pubring.kbx:ro
-      - ~/.gnupg/pubring.kbx~:/root/.gnupg/pubring.kbx~:ro
-      - ~/.gnupg/random_seed:/root/.gnupg/random_seed:ro
-      - ~/.gnupg/reader_0.status:/root/.gnupg/reader_0.status:ro
-      - ~/.gnupg/sshcontrol:/root/.gnupg/sshcontrol:ro
-      - ~/.gnupg/tofu.db:/root/.gnupg/tofu.db:ro
-      - ~/.gnupg/trustdb.gpg:/root/.gnupg/trustdb.gpg:ro
       - ~/.credentials:/root/.credentials:ro
     # [Optional] Required for ptrace-based debuggers like C++, Go, and Rust
     cap_add:
