@@ -58,7 +58,8 @@
     "vscoss.vscode-ansible",
     "vvakame.vscode-prh-extention",
     "wayou.vscode-todo-highlight",
-    "wholroyd.jinja"
+    "wholroyd.jinja",
+    "humao.rest-client"
   ]
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],

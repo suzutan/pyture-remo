@@ -22,6 +22,7 @@ RUN curl -s https://apt.thoughtbot.com/thoughtbot.gpg.key | sudo apt-key add - \
     && echo "deb https://apt.thoughtbot.com/debian/ stable main" > /etc/apt/sources.list.d/thoughtbot.list \
     && apt-get -y update \
     && apt-get -y install rcm vim \
+    && apt-get -y install jq \
     #
     # Clean up
     && apt-get autoremove -y \
