@@ -3,6 +3,8 @@
 from typing import List, NoReturn, Optional
 
 from .signal import Signal
+from .light import Light
+from .tv import TV
 
 
 class Appliance:
@@ -18,13 +20,15 @@ class Appliance:
 
     def _set_member(self, data: dict) -> NoReturn:
         self.id: str = data["id"]
-        self.model: str = data["model"]
+        self.model: dict = data["model"]
         self.nickname: str = data["nickname"]
         self.name: str = data["nickname"]  # alias for nickname
         self.image: str = data["image"]
         self.type: str = data["type"]
-        self.settings: str = data["settings"]
-        self.aircon: str = data["aircon"]
+        self.settings: dict = data["settings"]
+        self.aircon: dict = data["aircon"]
+        self.light: Light = Light(self.id, data["light"]) if self.type == "LIGHT" else None
+        self.tv: TV = TV(self.id, data["tv"]) if self.type == "TV" else None
         self.signals: List = [Signal(**signal) for signal in data["signals"]]
 
     def signal(self, name: str) -> (Optional[Signal], bool):
