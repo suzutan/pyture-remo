@@ -7,7 +7,8 @@ services:
     volumes:
       - ..:/workspace:cached
       - ~/dotfiles:/root/dotfiles
-      - ~/.credentials:/root/.credentials:ro
+      - ~/.credentials:/root/.credentials
+      - ~/.ssh:/root/.ssh
     # [Optional] Required for ptrace-based debuggers like C++, Go, and Rust
     cap_add:
       - SYS_PTRACE
