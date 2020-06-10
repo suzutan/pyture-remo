@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install poetry
-          poetry export -f requirements.txt -o requirements.txt
+          poetry export -f requirements.txt --dev -o requirements.txt
           pip install -r requirements.txt
       - name: Lint with flake8
         run: |
