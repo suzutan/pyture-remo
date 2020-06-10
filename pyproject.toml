@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyture-remo"
-version = "0.1.0"
+version = "0.2.2"
 description = "nature-remo library for Python"
 authors = ["Suzuka Asagiri <admin@suzutan.jp>"]
 license = "MIT"
